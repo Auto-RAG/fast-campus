@@ -1,0 +1,7 @@
+filename,module_name,module_params,execution_time
+pdf.parquet,langchain_parse,"{'file_type': 'pdf', 'parse_method': 'pdfminer'}",4.95894193649292
+csv.parquet,langchain_parse,"{'file_type': 'csv', 'parse_method': 'csv'}",4.065901041030884
+json.parquet,langchain_parse,"{'file_type': 'json', 'parse_method': 'json', 'jq_schema': '.content'}",4.137235879898071
+md.parquet,langchain_parse,"{'file_type': 'md', 'parse_method': 'unstructuredmarkdown'}",5.552343130111694
+html.parquet,langchain_parse,"{'file_type': 'html', 'parse_method': 'bshtml'}",4.196475028991699
+xml.parquet,langchain_parse,"{'file_type': 'xml', 'parse_method': 'unstructuredxml'}",5.463389873504639

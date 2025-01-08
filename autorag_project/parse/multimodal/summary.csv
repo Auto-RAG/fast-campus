@@ -1,0 +1,2 @@
+filename,module_name,module_params,execution_time
+parsed_result.parquet,llama_parse,"{'file_type': 'all_files', 'result_type': 'markdown', 'language': 'ko', 'use_vendor_multimodal_model': True, 'vendor_multimodal_model_name': 'openai-gpt-4o-mini'}",13.119384527206421

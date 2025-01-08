@@ -1,0 +1,8 @@
+modules:
+  - module_type: llamaparse
+    file_type: all_files
+    result_type: markdown
+    language: ko
+    use_vendor_multimodal_model: true
+    vendor_multimodal_model_name: openai-gpt-4o-mini
+    # use_own_key: true
