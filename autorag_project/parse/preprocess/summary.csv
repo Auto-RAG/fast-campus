@@ -1,0 +1,2 @@
+filename,module_name,module_params,execution_time
+pdf.parquet,table_hybrid_parse,"{'file_type': 'pdf', 'text_parse_module': 'langchain_parse', 'text_params': {'parse_method': 'pdfplumber'}, 'table_parse_module': 'llamaparse', 'table_params': {'result_type': 'markdown', 'language': 'ko'}}",0.6596096438923101

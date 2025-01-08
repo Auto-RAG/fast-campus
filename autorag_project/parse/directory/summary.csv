@@ -1,0 +1,2 @@
+filename,module_name,module_params,execution_time
+parsed_result.parquet,langchain_parse,"{'file_type': 'all_files', 'parse_method': 'directory'}",11.692965745925903

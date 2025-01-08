@@ -1,0 +1,5 @@
+langchain-community
+AutoRAG[parse]
+AutoRAG[ko]
+jupyter
+python-dotenv

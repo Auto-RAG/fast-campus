@@ -1,0 +1,10 @@
+modules:
+  - module_type: table_hybrid_parse
+    file_type: pdf
+    text_parse_module: langchain_parse
+    text_params:
+      parse_method: pdfplumber
+    table_parse_module: llamaparse
+    table_params:
+      result_type: markdown
+      language: ko
