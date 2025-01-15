@@ -1,0 +1,2 @@
+filename,module_name,module_params,execution_time,average_prompt_token,is_best
+0.parquet,Fstring,{'prompt': '{query} \\n Text: {retrieved_contents} \\n Translation :\n'},0.00013788938522338868,111.1,True
