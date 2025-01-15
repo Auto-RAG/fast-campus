@@ -1,0 +1,2 @@
+filename,module_name,module_params,execution_time,average_prompt_token,is_best
+0.parquet,Fstring,{'prompt': 'Summarize the following Context.\\n{query} \\n Context: {retrieved_contents} \\n Summary :\n'},0.00016568899154663087,3491.35,True

@@ -1,0 +1,26 @@
+node_lines:
+- node_line_name: node_line
+  nodes:
+    - node_type: prompt_maker
+      strategy:
+        metrics:
+          - metric_name: rouge # Will not execute this metric
+        generator_modules:
+          - module_type: openai_llm
+            llm: gpt-4o-mini
+      modules:
+        - module_type: fstring
+          prompt:
+          - | 
+            Summarize the following Context.\n{query} \n Context: {retrieved_contents} \n Summary :
+    - node_type: generator
+      strategy:
+        metrics:
+          - metric_name: rouge
+          - metric_name: sem_score
+            embedding_model: openai
+      modules:
+        - module_type: openai_llm
+          llm: gpt-4o-mini
+          temperature: [ 1.0 ]
+          batch: 16
