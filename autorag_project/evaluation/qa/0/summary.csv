@@ -1,0 +1,2 @@
+node_line_name,node_type,best_module_filename,best_module_name,best_module_params,best_execution_time
+post_retrieve_node_line,generator,0.parquet,OpenAILLM,"{'llm': 'gpt-4o-mini', 'temperature': 1.0, 'batch': 16}",0.2782094597816467
