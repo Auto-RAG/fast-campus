@@ -1,0 +1,2 @@
+filename,module_name,module_params,execution_time,average_output_token,g_eval,is_best
+0.parquet,OpenAILLM,"{'llm': 'gpt-4o-mini', 'temperature': 1.0, 'batch': 16}",0.27820945978164674,68.55,1.65,True

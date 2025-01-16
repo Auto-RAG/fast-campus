@@ -1,0 +1,3 @@
+node_line_name,node_type,best_module_filename,best_module_name,best_module_params,best_execution_time
+node_line,prompt_maker,0.parquet,Fstring,{'prompt': 'Summarize the following Context.\\n{query} \\n Context: {retrieved_contents} \\n Summary :\n'},0.0001656889915466
+node_line,generator,0.parquet,OpenAILLM,"{'llm': 'gpt-4o-mini', 'temperature': 1.0, 'batch': 16}",0.8174633026123047

@@ -3,3 +3,5 @@ AutoRAG[parse]
 AutoRAG[ko]
 jupyter
 python-dotenv
+deepeval
+ragas

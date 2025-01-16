@@ -1,0 +1,14 @@
+node_lines:
+- node_line_name: post_retrieve_node_line
+  nodes:
+    - node_type: generator
+      strategy:
+        metrics:
+          - metric_name: g_eval
+            metrics: [ consistency, relevance ]
+            model: gpt-4o
+      modules:
+        - module_type: openai_llm
+          llm: gpt-4o-mini
+          temperature: 1.0
+          batch: 16
