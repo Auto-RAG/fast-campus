@@ -1,0 +1,3 @@
+filename,module_name,module_params,execution_time,average_output_token,rouge,sem_score,bert_score,is_best
+0.parquet,OpenAILLM,"{'llm': 'gpt-4o-mini', 'temperature': 1.0, 'batch': 16}",0.6068979899088541,210.46666666666667,0.5428323165578066,0.9570969345806701,0.7895477930704753,False
+1.parquet,OpenAILLM,"{'llm': 'gpt-4o', 'temperature': 1.0, 'batch': 16}",0.4605829397837321,162.33333333333334,0.6224605024605024,0.9583031949790181,0.8256054480870565,True

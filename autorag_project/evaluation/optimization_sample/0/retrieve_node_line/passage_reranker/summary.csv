@@ -1,0 +1,5 @@
+filename,module_name,module_params,execution_time,passage_reranker_retrieval_f1,passage_reranker_retrieval_ndcg,passage_reranker_retrieval_map,is_best
+0.parquet,PassReranker,{'top_k': 4},0.00015665690104166668,0.40000000000000013,1.0,1.0,True
+1.parquet,Tart,{'top_k': 4},10.075980854034423,0.18666666666666668,0.4420619835714305,0.43333333333333335,False
+2.parquet,Upr,{'top_k': 4},10.647726138432821,0.16,0.37539531690476385,0.36666666666666664,False
+3.parquet,FlagEmbeddingReranker,{'top_k': 4},4.489105876286825,0.40000000000000013,1.0,1.0,False

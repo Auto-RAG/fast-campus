@@ -1,0 +1,108 @@
+vectordb:
+  - name: chroma_large
+    db_type: chroma
+    client_type: persistent
+    embedding_model: openai_embed_3_large
+    collection_name: openai_embed_3_large
+    path: ${PROJECT_DIR}/resources/chroma
+node_lines:
+- node_line_name: retrieve_node_line
+  nodes:
+    - node_type: query_expansion
+      strategy:
+        metrics: [ retrieval_recall ]
+        speed_threshold: 10
+        top_k: 20
+        retrieval_modules:
+          - module_type: vectordb
+            vectordb: chroma_large
+      modules:
+        - module_type: pass_query_expansion
+        - module_type: query_decompose
+          generator_module_type: llama_index_llm
+          llm: openai
+          model: [ gpt-4o ]
+        - module_type: hyde
+          generator_module_type: llama_index_llm
+          llm: openai
+          model: [ gpt-4o ]
+          max_token: 64
+        - module_type: multi_query_expansion
+          generator_module_type: llama_index_llm
+          llm: openai
+          temperature: 1.0
+    - node_type: retrieval
+      strategy:
+        metrics: [retrieval_f1, retrieval_ndcg, retrieval_map]
+      top_k: 20
+      modules:
+        - module_type: bm25
+          bm25_tokenizer: [ ko_kiwi, ko_okt, ko_kkma ]
+        - module_type: vectordb
+          vectordb: chroma_large
+        - module_type: hybrid_rrf
+        - module_type: hybrid_cc
+          normalize_method: [ mm, tmm, z, dbsf ]
+    - node_type: passage_reranker
+      strategy:
+        metrics: [retrieval_f1, retrieval_ndcg, retrieval_map]
+        speed_threshold: 5
+      top_k: 4
+      modules:
+        - module_type: pass_reranker
+        - module_type: tart
+        - module_type: upr
+        - module_type: flag_embedding_reranker
+    - node_type: passage_filter
+      strategy:
+        metrics: [retrieval_f1, retrieval_ndcg, retrieval_map]
+        speed_threshold: 5
+      modules:
+        - module_type: pass_passage_filter
+        - module_type: similarity_threshold_cutoff
+          threshold: [ 0.85, 0.87, 0.89 ]
+        - module_type: similarity_percentile_cutoff
+          percentile: [ 0.6, 0.8, 0.4 ]
+        - module_type: threshold_cutoff
+          threshold: [ 0.85, 0.87 ]
+        - module_type: percentile_cutoff
+          percentile: [ 0.6, 0.8, 0.4 ]
+- node_line_name: post_retrieve_node_line
+  nodes:
+    - node_type: prompt_maker
+      strategy:
+        metrics:
+          - metric_name: rouge
+          - metric_name: sem_score
+            embedding_model: openai
+          - metric_name: bert_score
+            lang: ko
+        generator_modules:
+          - module_type: openai_llm
+            llm: gpt-4o-mini
+      modules:
+        - module_type: fstring
+          prompt:
+          - | 
+            단락을 읽고 질문에 답하세요. \n 질문 : {query} \n 단락: {retrieved_contents} \n 답변 :
+          - |
+            단락을 읽고 질문에 답하세요. 답할때 단계별로 천천히 고심하여 답변하세요. 반드시 단락 내용을 기반으로 말하고 거짓을 말하지 마세요. \n 질문: {query} \n 단락: {retrieved_contents} \n 답변 :
+        - module_type: long_context_reorder
+          prompt:
+          - |
+            단락을 읽고 질문에 답하세요. \n 질문: {query} \n 단락: {retrieved_contents} \n 답변:
+          - |
+            단락을 읽고 질문에 답하세요. 답할때 단계별로 천천히 고심하여 답변하세요. 반드시 단락 내용을 기반으로 말하고 거짓을 말하지 마세요. \n 질문: {query} \n 단락: {retrieved_contents} \n 답변 :
+    - node_type: generator
+      strategy:
+        metrics:
+          - metric_name: rouge
+          - metric_name: sem_score
+            embedding_model: openai
+          - metric_name: bert_score
+            lang: ko
+      modules:
+        - module_type: openai_llm
+          llm: [ gpt-4o-mini, gpt-4o ]
+          temperature: 1.0
+          batch: 16

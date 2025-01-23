@@ -1,0 +1,10 @@
+filename,module_name,module_params,execution_time,retrieval_f1,retrieval_ndcg,retrieval_map,is_best
+0.parquet,VectorDB,"{'top_k': 20, 'vectordb': 'chroma_large'}",0.05860527356465658,0.09523809523809526,0.8806413002483015,0.8449494949494949,False
+1.parquet,BM25,"{'top_k': 20, 'bm25_tokenizer': 'ko_kkma'}",0.03440613746643066,0.09523809523809526,0.9507906338095277,0.9333333333333333,False
+2.parquet,BM25,"{'top_k': 20, 'bm25_tokenizer': 'ko_kiwi'}",0.9202439308166503,0.09523809523809526,1.0,1.0,True
+3.parquet,BM25,"{'top_k': 20, 'bm25_tokenizer': 'ko_okt'}",0.017498477300008138,0.09523809523809526,0.9753953169047639,0.9666666666666667,False
+4.parquet,HybridRRF,"{'top_k': 20, 'weight': 4.0, 'target_modules': ('VectorDB', 'BM25'), 'target_module_params': ({'top_k': 20, 'vectordb': 'chroma_large'}, {'top_k': 20, 'bm25_tokenizer': 'ko_kiwi'})}",0.978849204381307,0.09523809523809526,0.9374404207763234,0.9166666666666666,False
+5.parquet,HybridCC,"{'top_k': 20, 'normalize_method': 'dbsf', 'weight': 0.0, 'target_modules': ('VectorDB', 'BM25'), 'target_module_params': ({'top_k': 20, 'vectordb': 'chroma_large'}, {'top_k': 20, 'bm25_tokenizer': 'ko_kiwi'})}",0.978849204381307,0.09523809523809526,1.0,1.0,False
+6.parquet,HybridCC,"{'top_k': 20, 'normalize_method': 'z', 'weight': 0.0, 'target_modules': ('VectorDB', 'BM25'), 'target_module_params': ({'top_k': 20, 'vectordb': 'chroma_large'}, {'top_k': 20, 'bm25_tokenizer': 'ko_kiwi'})}",0.978849204381307,0.09523809523809526,1.0,1.0,False
+7.parquet,HybridCC,"{'top_k': 20, 'normalize_method': 'mm', 'weight': 0.0, 'target_modules': ('VectorDB', 'BM25'), 'target_module_params': ({'top_k': 20, 'vectordb': 'chroma_large'}, {'top_k': 20, 'bm25_tokenizer': 'ko_kiwi'})}",0.978849204381307,0.09523809523809526,1.0,1.0,False
+8.parquet,HybridCC,"{'top_k': 20, 'normalize_method': 'tmm', 'weight': 0.0, 'target_modules': ('VectorDB', 'BM25'), 'target_module_params': ({'top_k': 20, 'vectordb': 'chroma_large'}, {'top_k': 20, 'bm25_tokenizer': 'ko_kiwi'})}",0.978849204381307,0.09523809523809526,1.0,1.0,False

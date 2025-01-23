@@ -1,0 +1,7 @@
+node_line_name,node_type,best_module_filename,best_module_name,best_module_params,best_execution_time
+retrieve_node_line,query_expansion,0.parquet,PassQueryExpansion,{},0.0002854665120442
+retrieve_node_line,retrieval,2.parquet,BM25,"{'top_k': 20, 'bm25_tokenizer': 'ko_kiwi'}",0.9202439308166503
+retrieve_node_line,passage_reranker,0.parquet,PassReranker,{'top_k': 4},0.0001566569010416
+retrieve_node_line,passage_filter,11.parquet,PercentileCutoff,{'percentile': 0.4},0.0002515316009521
+post_retrieve_node_line,prompt_maker,2.parquet,LongContextReorder,{'prompt': '단락을 읽고 질문에 답하세요. \\n 질문: {query} \\n 단락: {retrieved_contents} \\n 답변:\n'},0.0001460075378417
+post_retrieve_node_line,generator,1.parquet,OpenAILLM,"{'llm': 'gpt-4o', 'temperature': 1.0, 'batch': 16}",0.4605829397837321

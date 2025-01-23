@@ -1,0 +1,7 @@
+vectordb:
+- client_type: persistent
+  collection_name: openai_embed_3_large
+  db_type: chroma
+  embedding_model: openai_embed_3_large
+  name: chroma_large
+  path: /Users/jeffrey/PycharmProjects/fast-campus/autorag_project/evaluation/optimization_sample/resources/chroma

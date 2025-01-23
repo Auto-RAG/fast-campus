@@ -1,0 +1,5 @@
+node_type,best_module_filename,best_module_name,best_module_params,best_execution_time
+query_expansion,0.parquet,PassQueryExpansion,{},0.0002854665120442
+retrieval,2.parquet,BM25,"{'top_k': 20, 'bm25_tokenizer': 'ko_kiwi'}",0.9202439308166503
+passage_reranker,0.parquet,PassReranker,{'top_k': 4},0.0001566569010416
+passage_filter,11.parquet,PercentileCutoff,{'percentile': 0.4},0.0002515316009521

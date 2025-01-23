@@ -1,0 +1,5 @@
+filename,module_name,module_params,execution_time,query_expansion_retrieval_recall,is_best
+0.parquet,PassQueryExpansion,{},0.0002854665120442708,1.0,True
+1.parquet,QueryDecompose,"{'generator_module_type': 'llama_index_llm', 'llm': 'openai', 'model': 'gpt-4o'}",0.21394468943277994,1.0,False
+2.parquet,HyDE,"{'generator_module_type': 'llama_index_llm', 'llm': 'openai', 'model': 'gpt-4o', 'max_token': 64}",1.092336924870809,1.0,False
+3.parquet,MultiQueryExpansion,"{'generator_module_type': 'llama_index_llm', 'llm': 'openai', 'temperature': 1.0}",0.25323594411214195,0.9333333333333333,False

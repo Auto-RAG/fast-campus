@@ -1,0 +1,5 @@
+filename,module_name,module_params,execution_time,average_prompt_token,prompt_maker_rouge,prompt_maker_sem_score,prompt_maker_bert_score,is_best
+0.parquet,Fstring,{'prompt': '단락을 읽고 질문에 답하세요. 답할때 단계별로 천천히 고심하여 답변하세요. 반드시 단락 내용을 기반으로 말하고 거짓을 말하지 마세요. \\n 질문: {query} \\n 단락: {retrieved_contents} \\n 답변 :\n'},0.0002033233642578125,2389.0,0.448969363969364,0.9534536289553883,0.7629857540130616,False
+1.parquet,Fstring,{'prompt': '단락을 읽고 질문에 답하세요. \\n 질문 : {query} \\n 단락: {retrieved_contents} \\n 답변 :\n'},0.00015927950541178387,2262.0,0.448969363969364,0.9534604987901021,0.7629857540130616,False
+2.parquet,LongContextReorder,{'prompt': '단락을 읽고 질문에 답하세요. \\n 질문: {query} \\n 단락: {retrieved_contents} \\n 답변:\n'},0.00014600753784179687,4307.133333333333,0.448969363969364,0.9534716821381095,0.7629857540130616,True
+3.parquet,LongContextReorder,{'prompt': '단락을 읽고 질문에 답하세요. 답할때 단계별로 천천히 고심하여 답변하세요. 반드시 단락 내용을 기반으로 말하고 거짓을 말하지 마세요. \\n 질문: {query} \\n 단락: {retrieved_contents} \\n 답변 :\n'},0.0008827368418375651,4434.133333333333,0.448969363969364,0.9534698694840651,0.7629857540130616,False
