@@ -1,0 +1,9 @@
+modules:
+  - module_type: table_hybrid_parse
+    file_type: pdf
+    text_parse_module: langchain_parse
+    text_params:
+      parse_method: pypdfium2
+    table_parse_module: langchain_parse
+    table_params:
+      parse_method: upstagedocumentparse
