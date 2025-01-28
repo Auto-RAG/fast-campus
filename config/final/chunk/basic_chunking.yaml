@@ -3,3 +3,4 @@ modules:
     chunk_method: Token
     chunk_size: [ 512 ]
     chunk_overlap: 24
+    # add_file_name: ko
