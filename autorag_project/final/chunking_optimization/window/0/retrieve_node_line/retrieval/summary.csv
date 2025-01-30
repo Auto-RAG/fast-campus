@@ -1,0 +1,2 @@
+filename,module_name,module_params,execution_time,retrieval_f1,retrieval_recall,retrieval_precision,is_best
+0.parquet,BM25,"{'top_k': 3, 'bm25_tokenizer': 'ko_kiwi'}",1.4880984913219104,0.21515151515151515,0.3939393939393939,0.15151515151515152,True
