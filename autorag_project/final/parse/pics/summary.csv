@@ -1,0 +1,2 @@
+filename,module_name,module_params,execution_time
+pdf.parquet,langchain_parse,"{'file_type': 'pdf', 'parse_method': 'pypdfium2'}",0.33082061547499436
