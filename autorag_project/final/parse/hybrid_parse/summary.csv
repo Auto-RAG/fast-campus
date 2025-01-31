@@ -1,0 +1,2 @@
+filename,module_name,module_params,execution_time
+pdf.parquet,table_hybrid_parse,"{'file_type': 'pdf', 'text_parse_module': 'langchain_parse', 'text_params': {'parse_method': 'pypdfium2'}, 'table_parse_module': 'langchain_parse', 'table_params': {'parse_method': 'upstagedocumentparse'}}",0.19866966244826004
